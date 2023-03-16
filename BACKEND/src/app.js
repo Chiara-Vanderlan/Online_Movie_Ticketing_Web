@@ -9,7 +9,7 @@ import { connect} from "./utils/database.connection";
 
 
 const app = express();
-const PORT = process.env.PORT || "3043";
+const PORT = process.env.PORT || "9043";
 
 app.use(cors());
 app.use(express.json({limit: "20mb"}));
