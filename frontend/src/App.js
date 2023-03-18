@@ -1,22 +1,27 @@
-//import logo from './logo.svg';
-import './App.css';
+//import './App.css';
 import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
-//import { Switch, Route } from 'react-router-dom';
-import Home from './Pages/Home'
-//import About from './Pages/About';
+
+import HomePage from './Pages/Home/HomePage';
+import AboutUs from './Pages/About/AboutUs';
+import Home from './Pages/Home';
 
 
 function App() {
   return (
-    //<Home></Home>
+    
 
     
     <Router>
       <div>
          <Switch>
 
-          <Route path="/">
-              <Home/>
+          <Route exact path="/">
+          <HomePage/>
+          </Route>
+
+          <Route path = "/About">
+         
+          <AboutUs></AboutUs>
           </Route>
 
 
