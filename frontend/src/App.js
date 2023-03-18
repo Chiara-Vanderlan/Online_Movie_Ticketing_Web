@@ -1,14 +1,30 @@
 //import logo from './logo.svg';
 import './App.css';
-import Home from './Pages/Home';
+import { BrowserRouter as Router,Switch,Route} from 'react-router-dom';
+//import { Switch, Route } from 'react-router-dom';
+import Home from './Pages/Home'
+//import About from './Pages/About';
 
 
 function App() {
   return (
-    <div className ="App">
-      <Home/>
-      <h1>Hello </h1>
+    //<Home></Home>
+
+    
+    <Router>
+      <div>
+         <Switch>
+
+          <Route path="/">
+              <Home/>
+          </Route>
+
+
+        </Switch>
     </div>
+  </Router>
+
+  
   );
 }
 
