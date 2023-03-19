@@ -7,7 +7,7 @@ export default function Header() {
 
     const handleSubmit = (event) => {
        event.preventDefault();
-     // do something with the search term
+     // backend
      console.log(searchTerm);
      };
   

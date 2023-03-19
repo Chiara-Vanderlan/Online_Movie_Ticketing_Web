@@ -17,7 +17,7 @@ const Login = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Add logic to submit login credentials
+    // backend
   };
 
   return (
