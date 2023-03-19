@@ -83,12 +83,12 @@ p {
 
 .movie img {
   width: 100%;
-  height: 250px;
+  height: 200px;
   object-fit: cover;
 }
 
 .movie h2 {
-  color: white;
+  color: whit;
   font-size: 24px;
   margin: 10px;
 }
@@ -96,7 +96,7 @@ p {
 .movie p {
   margin: 10px;
   font-size: 18px;
-  color: #666;
+  color: #d7b1b1;
 }
 
 .movie button {
@@ -110,5 +110,5 @@ p {
 }
 
 .movie button:hover {
-  background-color: #111;
+  background-color: #000000;
 }

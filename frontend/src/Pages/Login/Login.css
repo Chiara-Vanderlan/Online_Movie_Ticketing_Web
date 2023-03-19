@@ -1,0 +1,97 @@
+/* Set background color and font family */
+body {
+    background-color: #000000;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+  }
+  
+  /* Set styles for header */
+  header {
+    background-color: rgb(77, 77, 81);
+    color: #7fa2d0;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between ;
+  }
+
+  /* Set styles for main content area */
+  main {
+    color: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    color: rgb(216, 216, 216);
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  p {
+    color: rgb(141, 172, 192);
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    
+  }
+  
+  /* Set styles for login form */
+  .login-form {
+    
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(202, 196, 196, 0.1);
+  }
+  
+  .login-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fefefe;
+    text-align: center;
+  }
+  
+  .login-form label {
+    display: block;
+    margin-bottom: 10px;
+    color: #c6c6c6;
+    font-size: 18px;
+  }
+  
+  .login-form input[type="text"],
+  .login-form input[type="password"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  .login-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 70px;
+    font-size: 18px;
+    background-color: #f0f0f0;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-form button[type="submit"]:hover {
+    background-color: #fffefe;
+  }
+  
+  .login-form .error-message {
+    color: red;
+    margin-bottom: 10px;
+    text-align: center;
+  }

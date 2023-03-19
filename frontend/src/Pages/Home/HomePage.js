@@ -9,7 +9,7 @@ export default function HomePage() {
       <div className='logo' >MOVIE CLUB</div>
       <nav>
         <ul >
-          <li class ='nav li' ><a href="#">Home   </a></li>
+          <li ><a href="#">Home   </a></li>
           <li ><a href="#">Movies   </a></li>
           <li><a href="#">Contact   </a></li>
           <li><a href="#">About   </a></li>
@@ -19,11 +19,11 @@ export default function HomePage() {
     </header>
     <main>
       <h1>WELCOME TO THE MOVIE CLUB</h1>
-      <p>Book your tickets online and avoid waiting in line.</p>
+      <p >Book your tickets online and avoid waiting in line.</p>
       <div >
         <div >
           <img src="https://via.placeholder.com/250x250" alt="Movie Poster" />
-          <h2 className='.movie h2'>The Avengers</h2>
+          <h2 >The Avengers</h2>
           <p>Earth's mightiest heroes must come together and learn to fight as a team if they are going to stop the mischievous Loki and his alien army from enslaving humanity.</p>
           <button>Book Tickets</button>
         </div>
