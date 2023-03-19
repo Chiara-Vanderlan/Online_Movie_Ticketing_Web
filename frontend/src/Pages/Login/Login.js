@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import "./Login.css"
+import Header from '../Header';
 
 
 const Login = () => {
@@ -20,22 +21,8 @@ const Login = () => {
   };
 
   return (
-    <div>
-    <div>
-    <header>
-      <div className='logo' >MOVIE CLUB</div>
-      <nav>
-        <ul >
-          <li ><a href="#">Home   </a></li>
-          <li ><a href="#">Movies   </a></li>
-          <li><a href="#">Contact   </a></li>
-          <li><a href="#">About   </a></li>
-          <li><a href="#">Login   </a></li>
-          </ul>
-      </nav>
-    </header>
-    </div>
-
+  <div>
+      <Header></Header>
     <div>
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
@@ -50,9 +37,9 @@ const Login = () => {
         <button  type="submit">Login</button>
       </form>
     </div>
+  </div>
 
-
-    </div>
+    
   );
 };
 
