@@ -3,6 +3,7 @@ import Header from '../Header';
 import Image1 from "./Pissyinboot.jpeg"
 import Image2 from "./avatar.webp"
 import Image3 from "./R (10).jpeg"
+import { useLocation, useNavigate } from "react-router-dom";
 
 import './styles.css'
 
@@ -10,13 +11,16 @@ export default function HomePage() {
   const img1 = Image1;
   const img2 = Image2;
   const img3 = Image3;
+
+  const location = useLocation()
   return (
     <div >
       <Header></Header>
   
     <main>
       
-      <h1>WELCOME TO THE MOVIE CLUB</h1>
+    
+      <h1>DEAR {location.state.id} ,WELCOME TO THE MOVIE CLUB</h1>
       <p >BOOK YOUR TICKETS ONLINE AND AVOID WAITING IN LINE.</p>
       <div >
         <div className="movie" >

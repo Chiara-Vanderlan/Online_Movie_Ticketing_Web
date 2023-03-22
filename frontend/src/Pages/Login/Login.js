@@ -1,11 +1,26 @@
 import React, { useState } from 'react';
 import "./Login.css"
 import Header from '../Header';
-
+import {useNavigation,Link} from 'react-router-dom'
+import axios from "axios"
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  async function submit(e){
+    e.preventDefault();
+
+    try{
+      await axios.post("http://localhost:3000/Login" ,{
+        email, password
+      }) 
+
+    }
+    catch(e){
+        console.log(e);
+    }
+  }
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -25,16 +40,24 @@ const Login = () => {
       <Header></Header>
     <div >
       <h1>Login</h1>
-      <form onSubmit={handleSubmit} >
+      <form action='POST' >
+
         <div >
-          <label htmlFor="email">Email:</label>
-          <input type="email" id="email" value={email} onChange={handleEmailChange} />
+          <label>Email:</label>
+          <input type="email"  onChange={(e)=>{setEmail(e.target.value)}}placeholder ="Email" />
         </div>
         <div>
-          <label  htmlFor="password">Password:</label>
-          <input type="password" id="password" value={password} onChange={handlePasswordChange} />
+          <label >Password:</label>
+          <input type="password"  onChange={(e)=>{setPassword(e.target.value)}}placeholder ="Password" />
         </div>
-        <button  type="submit">Login</button>
+        <input type = "Submit" onClick={submit}/>
+        
+        
+        <br/>
+        <p>OR </p>
+        <br/>
+        
+        <Link to = "/Register">Register</Link>
       </form>
     </div>
   </div>

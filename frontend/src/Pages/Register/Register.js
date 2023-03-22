@@ -1,69 +1,71 @@
 import React, { useState } from 'react';
-import Header from '../Header';
 import "./Register.css"
+import Header from '../Header';
+import {useNavigation,Link} from 'react-router-dom'
+import axios from "axios"
 
-function Register() {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  
+  async function submit(e){
+    e.preventDefault();
 
+    try{
+      await axios.post("http://localhost:3000/LRegister" ,{
+        email, password
+      }) 
 
+    }
+    catch(e){
+        console.log(e);
+    }
+  }
+
+  const handleEmailChange = (event) => {
+    setEmail(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // backend
+  };
 
   return (
-    <div>      
-    <Header></Header>
-    <div className="sign-up-form">
-      <h2>Sign Up</h2>
-      <form >
-        <div className='label'>
-        <label>
-          First Name:
-          <input
-            type="text"
-            value={firstName}
-            onChange={(event) => setFirstName(event.target.value)}
-          />
-        </label>
-        </div>
+  <div>
+      <Header></Header>
+    <div >
+      <h1>Register</h1>
+      <form action='POST' >
 
-        <div>
-        <label>
-          Last Name:
-          <input
-            type="text"
-            value={lastName}
-            onChange={(event) => setLastName(event.target.value)}
-          />
-        </label>
+        <div >
+          <label>Email:</label>
+          <input type="email"  onChange={(e)=>{setEmail(e.target.value)}}placeholder ="Email" />
         </div>
-
         <div>
-        <label>
-          Email:
-          <input
-            type="email"
-            value={email}
-            onChange={(event) => setEmail(event.target.value)}
-          />
-        </label>
+          <label >Password:</label>
+          <input type="password"  onChange={(e)=>{setPassword(e.target.value)}}placeholder ="Password" />
         </div>
-
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={(event) => setPassword(event.target.value)}
-          />
-        </label>
-        <div>
-        <button type="submit">Sign Up</button>
-        </div>
+        <input type = "Submit" onClick={submit}/>
+        
+        
+        <br/>
+        <p>OR </p>
+        <br/>
+        
+        <Link to = "/Login">Login</Link>
       </form>
     </div>
-    </div>
-  );
-}
+  </div>
 
-export default Register;
+    
+  );
+};
+
+export default Login;
+
+
