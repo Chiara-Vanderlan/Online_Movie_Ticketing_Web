@@ -23,10 +23,10 @@ const Login = () => {
   return (
   <div>
       <Header></Header>
-    <div>
+    <div >
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
+      <form onSubmit={handleSubmit} >
+        <div >
           <label htmlFor="email">Email:</label>
           <input type="email" id="email" value={email} onChange={handleEmailChange} />
         </div>

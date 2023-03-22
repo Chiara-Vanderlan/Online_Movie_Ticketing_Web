@@ -27,16 +27,17 @@ export default function Header() {
         placeholder="Search movies..."
         value={searchTerm}
         onChange={handleChange}
+        style={{ width: '400px', height: '35px' }}
         />
-        <button type="submit">Search</button>
+        <button type="submit" style={{ width: '80px', height: '40px' }}>Search</button>
         </form>
 
       <nav>
         <ul >
           <li ><Link to = "/" >Home   </Link></li>
-          <li ><Link to = "/AboutUs">About Us </Link></li>
+          <li ><Link to = "/Movies">Movies </Link></li>
           <li><Link to = "/AboutUs">Contact Us   </Link></li>
-          <li><Link to = "/SignUp">SignIn   </Link></li>
+          <li><Link to = "/Register">Register  </Link></li>
           <li><Link to = "/Login">Login   </Link></li>
           </ul>
       </nav>

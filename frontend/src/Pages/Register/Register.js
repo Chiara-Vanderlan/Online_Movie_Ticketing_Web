@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import Header from './Header';
+import Header from '../Header';
+import "./Register.css"
 
-function SignUp() {
+function Register() {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
@@ -15,6 +16,7 @@ function SignUp() {
     <div className="sign-up-form">
       <h2>Sign Up</h2>
       <form >
+        <div className='label'>
         <label>
           First Name:
           <input
@@ -23,6 +25,9 @@ function SignUp() {
             onChange={(event) => setFirstName(event.target.value)}
           />
         </label>
+        </div>
+
+        <div>
         <label>
           Last Name:
           <input
@@ -31,6 +36,9 @@ function SignUp() {
             onChange={(event) => setLastName(event.target.value)}
           />
         </label>
+        </div>
+
+        <div>
         <label>
           Email:
           <input
@@ -39,6 +47,8 @@ function SignUp() {
             onChange={(event) => setEmail(event.target.value)}
           />
         </label>
+        </div>
+
         <label>
           Password:
           <input
@@ -47,11 +57,13 @@ function SignUp() {
             onChange={(event) => setPassword(event.target.value)}
           />
         </label>
+        <div>
         <button type="submit">Sign Up</button>
+        </div>
       </form>
     </div>
     </div>
   );
 }
 
-export default SignUp;
+export default Register;

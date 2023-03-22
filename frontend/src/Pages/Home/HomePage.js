@@ -15,8 +15,9 @@ export default function HomePage() {
       <Header></Header>
   
     <main>
+      
       <h1>WELCOME TO THE MOVIE CLUB</h1>
-      <p >Book your tickets online and avoid waiting in line.</p>
+      <p >BOOK YOUR TICKETS ONLINE AND AVOID WAITING IN LINE.</p>
       <div >
         <div className="movie" >
           <img  src={img2} alt="" />
