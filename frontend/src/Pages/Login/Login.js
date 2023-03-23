@@ -1,26 +1,12 @@
 import React, { useState } from 'react';
-import "./Login.css"
+import axios from 'axios';
 import Header from '../Header';
-import {useNavigation,Link} from 'react-router-dom'
-import axios from "axios"
+
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  
-  async function submit(e){
-    e.preventDefault();
-
-    try{
-      await axios.post("http://localhost:3000/Login" ,{
-        email, password
-      }) 
-
-    }
-    catch(e){
-        console.log(e);
-    }
-  }
+  const [error, setError] = useState('');
 
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
@@ -30,42 +16,43 @@ const Login = () => {
     setPassword(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    // backend
+
+    try {
+      const response = await axios.post('/api/login', { email, password });
+      console.log(response.data);
+      // handle successful login
+    } catch (error) {
+      setError(error.response.data.message);
+    }
   };
 
   return (
-  <div>
-      <Header></Header>
-    <div >
+    <div>
+       <Header></Header>
+       <div>
       <h1>Login</h1>
-      <form action='POST' >
-
-        <div >
+      <form onSubmit={handleSubmit}>
+        <div>
           <label>Email:</label>
-          <input type="email"  onChange={(e)=>{setEmail(e.target.value)}}placeholder ="Email" />
+          <input type="email" value={email} onChange={handleEmailChange} placeholder="Email" />
         </div>
         <div>
-          <label >Password:</label>
-          <input type="password"  onChange={(e)=>{setPassword(e.target.value)}}placeholder ="Password" />
+          <label>Password:</label>
+          <input type="password" value={password} onChange={handlePasswordChange} placeholder="Password" />
         </div>
-        <input type = "Submit" onClick={submit}/>
-        
-        
-        <br/>
-        <p>OR </p>
-        <br/>
-        
-        <Link to = "/Register">Register</Link>
+        {error && <p>{error}</p>}
+        <button type="submit">Login</button>
       </form>
+      </div>
     </div>
-  </div>
-
-    
   );
 };
 
 export default Login;
+
+
+
 
 

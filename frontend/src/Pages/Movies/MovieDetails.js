@@ -16,4 +16,4 @@ const MovieDetails = ({ title, description, releaseYear, director, cast }) => {
   );
 };
 
-export default MovieDetails
+export default MovieDetails;

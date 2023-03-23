@@ -20,7 +20,7 @@ export default function HomePage() {
     <main>
       
     
-      <h1>DEAR {location.state.id} ,WELCOME TO THE MOVIE CLUB</h1>
+      <h1>WELCOME TO THE MOVIE CLUB</h1>
       <p >BOOK YOUR TICKETS ONLINE AND AVOID WAITING IN LINE.</p>
       <div >
         <div className="movie" >

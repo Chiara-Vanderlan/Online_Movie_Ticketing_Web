@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieDetails from './MovieDetails';
 import Header from '../Header';
+import '../Home/styles.css'
 
 const movies = [
   {
@@ -22,9 +23,9 @@ const movies = [
 
 const MovieList = () => {
   return (
-    <div>
+    <div >
         <Header></Header>
-    <div>
+    <div >
       {movies.map((movie) => (
         <MovieDetails
           key={movie.title}
