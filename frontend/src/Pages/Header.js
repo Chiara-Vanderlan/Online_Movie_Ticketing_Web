@@ -4,11 +4,15 @@ import {Link} from 'react-router-dom'
 export default function Header() {
 
     const [searchTerm, setSearchTerm] = useState("");
+    const [results, setResults] = useState([]);
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
        event.preventDefault();
      // backend
-     console.log(searchTerm);
+     const response = await fetch(`http://localhost:8004/movie/getAll?q=${searchTerm}`);
+    const data = await response.json();
+    setResults(data.results);
+     //console.log(searchTerm);
      };
   
        const handleChange = (event) => {

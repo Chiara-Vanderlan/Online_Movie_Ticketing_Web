@@ -12,6 +12,7 @@ app.use(express.json());
 //For testing
 
 app.get("/", (req, res) => {
+  
   return res.json("Testing");
  });
 
@@ -29,4 +30,4 @@ const userRouter = require("./routes/user");
 app.use("/user", userRouter);
 
 
-app.listen(8004, () => console.log("Listening to port 8000"));
+app.listen(3000, () => console.log("Listening to port 8000"));
