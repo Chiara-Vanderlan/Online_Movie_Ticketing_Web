@@ -1,3 +1,8 @@
+const { googleAuth } = require("./configs/google.auth");
+const passport = require("passport");
+const session = require("express-session");
+
+
 require("dotenv/config");
 
 const express = require("express");
@@ -29,5 +34,26 @@ app.use("/movie", movieRouter);
 const userRouter = require("./routes/user");
 app.use("/user", userRouter);
 
+app.use(
 
-app.listen(3000, () => console.log("Listening to port 8000"));
+  session({
+    secret : 'Movie website',
+    resave: false,
+    saveUninitialized : false,
+    cookie : { 
+      secure : false,
+      expires: new Date(Date.now()+10000),
+      maxAge: 10000 
+    }
+
+  })
+)
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.listen(3001, () => {
+  console.log("Listening to port 8000")
+  googleAuth(passport);
+
+}
+  );
