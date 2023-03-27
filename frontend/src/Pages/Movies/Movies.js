@@ -18,8 +18,11 @@ const movies = [
     director: 'Francis Ford Coppola',
     cast: 'Marlon Brando, Al Pacino, James Caan',
   },
-  // more movie data...
+  
 ];
+
+
+
 
 const MovieList = () => {
   return (
@@ -34,10 +37,12 @@ const MovieList = () => {
           releaseYear={movie.releaseYear}
           director={movie.director}
           cast={movie.cast}
-          
+
         />
+
       ))}
     </div>
+
     </div>
   );
 };

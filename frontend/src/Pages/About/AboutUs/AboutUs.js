@@ -29,7 +29,7 @@ function ContactUs() {
         <h1>Contact Us</h1>
           <form onSubmit={handleSubmit}>
           <div>
-              <label htmlFor="name">Name:</label>
+              <label htmlFor="name">Name :</label>
               <input type="text" id="name" value={name} onChange={(e) => setName(e.target.value)} />
           </div>
           <div>

@@ -9,7 +9,7 @@ export default function Header() {
     const handleSubmit = async (event) => {
        event.preventDefault();
      // backend
-     const response = await fetch(`http://localhost:8004/movie/getAll?q=${searchTerm}`);
+     const response = await fetch(`http://localhost:3001/movie/getAll?q=${searchTerm}`);
     const data = await response.json();
     setResults(data.results);
      //console.log(searchTerm);
